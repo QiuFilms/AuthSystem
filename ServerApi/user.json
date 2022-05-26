@@ -5,12 +5,22 @@
         {
             "id": 1,
             "email": "aaa@gmail.com",
-            "password" : "123"
+            "password": "123"
         },
         {
             "id": 2,
             "email": "dd@gmail.com",
             "password": "asd123"
+        },
+        {
+            "id": 3,
+            "email": "aqob9vaj@mail.com",
+            "password": "wqegrq8x"
+        },
+        {
+            "id": 4,
+            "email": "uhmvf1q7@mail.com",
+            "password": "ds40n5i8"
         }
     ]
 }

@@ -9,6 +9,8 @@ const user = new Auth({
 
 //user.signOut()
 
-user.signIn("dd@gmail.com","asd123").then((data) =>{console.log(data)})
-//console.log(user.currentUser)
+//user.signIn("dd@gmail.com","asd123").then((data) =>{console.log(data)})
+console.log(user.currentUser)
+
+console.log(user.generateRandomUser())
 

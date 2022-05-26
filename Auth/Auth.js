@@ -84,6 +84,12 @@ class Auth {
             })
     }
 
+
+    generateRandomUser(){
+        const email = Math.random().toString(36).slice(-8)+"@mail.com";
+        const password = Math.random().toString(36).slice(-8);
+        return this.signUp(email,password)
+    }
 }
 
 
