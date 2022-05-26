@@ -51,19 +51,23 @@ app.post("/signIn", (req, res) => {
   const {email, password, apiKey, projectID} = req.body;
 
   if(apiKey == config.apiKey && projectID == config.projectID){
-    for(i in config.users){
-      console.log(i)
-      if(config.users[i].email===email){
-        if(config.users[i].password===password){
-          let user = config.users[i]
-          delete user.password
-          //console.log(user) 
-          return res.send(user)
+    
+    config.users.forEach((arrayItem) =>{
+      if(arrayItem.email === email && arrayItem.password === password){
+        const user = {
+          id: arrayItem.id,
+          email: arrayItem.email
         }
-        return res.send({status:"failure"})
+        
+        return res.send(user)
       }
+
+    })
+    if(!res.headersSent){
+      return res.send({status:"failure"})
     }
-    return res.send({status:"failure"})
   }
-  res.send({status: "Api error"})
+  if(!res.headersSent){
+    return res.send({status: "Api error"})
+  }
 })
